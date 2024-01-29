@@ -22,7 +22,7 @@ public class Pedido {
         return this.hamburguer.getValor() + this.acompanhamentos.getValor() + this.refrigerante.getValor() + this.extras.getValor();
     }
 
-    public String getInfoPedidio(){
+    public String getInfoPedido(){
         return String.format("Hamburguer: %s\nAcompanhamentos: %s\nRefrigerante: %s\nExtras: %s\nValor total: %.2f",
                 this.hamburguer.getInfoItem(),
                 this.acompanhamentos.getInfoItem(),
