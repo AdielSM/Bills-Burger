@@ -1,34 +1,25 @@
 package Entities.Itens;
 
+import java.util.Objects;
+
 public class Hamburguer extends Itens {
     private String tipoCarne;
-    private String salada;
     private String complementos;
     private String extras;
 
-    public Hamburguer(String nome, String tamanho, double valor, String tipoCarne,
-                      String salada, String complementos) {
+    public Hamburguer(String nome, String tamanho, double valor, String tipoCarne, String complementos) {
         super(nome, tamanho, valor);
         this.tipoCarne = tipoCarne;
-        this.salada = salada;
         this.complementos = complementos;
-        this.extras = "";
     }
-
-    public Hamburguer(String nome, String tamanho, double valor, String tipoCarne,
-                      String salada, String complementos, String adicionais) {
-        super(nome, tamanho, valor);
-        this.tipoCarne = tipoCarne;
-        this.salada = salada;
-        this.complementos = complementos;
-        this.extras = "";
-    }
-
+    
     @Override
     public String getInfoItem() {
-        return super.getInfoItem() + "\nTipo de carne: " + this.tipoCarne +
-                "\nSalada: " + this.salada + "\nComplementos: " + this.complementos +
-                "\nExtras: " + this.extras + "\n";
+        if(!Objects.equals(extras, null)){
+            return super.getInfoItem() + String.format("Tipo da carne: %s\nComplementos: %s\nExtras: %s\n", this.tipoCarne, this.complementos, this.extras);
+        }
+
+        return super.getInfoItem() + String.format("Tipo da carne: %s\nComplementos: %s\n", this.tipoCarne, this.complementos);
     }
 
     public void adicionarExtras(String extras) {
@@ -45,14 +36,6 @@ public class Hamburguer extends Itens {
 
     public void setTipoCarne(String tipoCarne) {
         this.tipoCarne = tipoCarne;
-    }
-
-    public String getSalada() {
-        return salada;
-    }
-
-    public void setSalada(String salada) {
-        this.salada = salada;
     }
 
     public String getComplementos() {
