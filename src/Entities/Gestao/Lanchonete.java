@@ -31,7 +31,7 @@ public class Lanchonete {
         Acompanhamentos acompanhamentos = getItem(Lanchonete.acompanhamentos, Acompanhamentos, "Acompanhamento não encontrado");
         Refrigerante refrigerante = getItem(Lanchonete.refrigerantes, Refrigerante, "Refrigerante não encontrado");
 
-        Pedido pedido = new Pedido(hamburguer, acompanhamentos, refrigerante, null);
+        Pedido pedido = new Pedido(hamburguer, acompanhamentos, refrigerante);
 
         System.out.println(pedido.getInfoPedido());
     }
