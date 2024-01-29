@@ -15,6 +15,36 @@ public class Lanchonete {
 
     public Lanchonete(){};
 
+    public void listarCardapio(){
+        System.out.printf("\n %5s=== Hamburgueres === \n", " ");
+        System.out.printf("%-20s %-10s %-10s%n", "Nome", "Tamanho", "Valor");
+        for (String key : Lanchonete.hamburgueres.keySet()) {
+            Hamburguer h = Lanchonete.hamburgueres.get(key);
+            System.out.printf("%-20s %-10s %-10.2f%n", h.getNome(), h.getTamanho(), h.getValor());
+        }
+
+        System.out.printf("\n %5s=== Refrigerantes === \n", " ");
+        System.out.printf("%-20s %-10s %-10s%n", "Nome", "Tamanho", "Valor");
+        for (String key : Lanchonete.refrigerantes.keySet()) {
+            Refrigerante r = Lanchonete.refrigerantes.get(key);
+            System.out.println(String.format("%-20s %-10s %-10.2f", r.getNome(), r.getTamanho(), r.getValor()));
+        }
+
+        System.out.printf("\n %5s=== Acompanhamentos === \n", " ");
+        System.out.printf("%-20s %-10s %-10s%n", "Nome", "Tamanho", "Valor");
+        for (String key : Lanchonete.acompanhamentos.keySet()) {
+            Acompanhamentos a = Lanchonete.acompanhamentos.get(key);
+            System.out.printf("%-20s %-10s %-10.2f%n", a.getNome(), a.getTamanho(), a.getValor());
+        }
+
+        System.out.printf("\n %8s=== Adicionais === \n", " ");
+        System.out.printf("%-20s %-10s %-10s%n", "Nome", "Tamanho", "Valor");
+        for (String key : Lanchonete.extras.keySet()) {
+            Extras e = Lanchonete.extras.get(key);
+            System.out.printf("%-20s %-10s %-10.2f%n", e.getNome(), e.getTamanho(), e.getValor());
+        }
+    }
+
     public void fazerPedido(String Hamburguer, String Acompanhamentos, String Refrigerante, String Extras){
         Hamburguer hamburguer = getItem(Lanchonete.hamburgueres, Hamburguer, "Hamburguer não encontrado");
         Acompanhamentos acompanhamentos = getItem(Lanchonete.acompanhamentos, Acompanhamentos, "Acompanhamento não encontrado");
@@ -52,11 +82,11 @@ public class Lanchonete {
         Lanchonete.refrigerantes.put(nome, new Refrigerante(nome, tamanho, valor));
     }
 
-    protected void addAcompanhamentos(String nome, String tamanho, double valor){
+    protected void addAcompanhamento(String nome, String tamanho, double valor){
         Lanchonete.acompanhamentos.put(nome, new Acompanhamentos(nome, tamanho, valor));
     }
 
-    protected void addExtras(String nome, String tamanho, double valor){
+    protected void addExtra(String nome, double valor){
         Lanchonete.extras.put(nome, new Extras(nome, valor));
     }
 

@@ -33,9 +33,9 @@ public class Pedido {
 
     public String getInfoPedido(){
         if (this.extras != null){
-            return String.format("Hamburguer: %s\nAcompanhamento: %s\nRefrigerante: %s\nExtras: %s\nValor total: %.2f", this.hamburguer.getNome(), this.acompanhamentos.getNome(), this.refrigerante.getNome(), this.extras.getNome(), this.getValorTotal());
+            return String.format("\nInformações Do Pedido:\nHamburguer: %s\nAcompanhamento: %s\nRefrigerante: %s\nExtras: %s\nValor total: %.2f", this.hamburguer.getNome(), this.acompanhamentos.getNome(), this.refrigerante.getNome(), this.extras.getNome(), this.getValorTotal());
         }
-        return String.format("Hamburguer: %s\nAcompanhamento: %s\nRefrigerante: %s\nValor total: %.2f", this.hamburguer.getNome(), this.acompanhamentos.getNome(), this.refrigerante.getNome(), this.getValorTotal());
+        return String.format("\nInformações Do Pedido:\nHamburguer: %s\nAcompanhamento: %s\nRefrigerante: %s\nValor total: %.2f", this.hamburguer.getNome(), this.acompanhamentos.getNome(), this.refrigerante.getNome(), this.getValorTotal());
     }
 
 }

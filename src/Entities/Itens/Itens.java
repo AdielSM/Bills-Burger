@@ -16,7 +16,7 @@ public class Itens {
     }
 
     public String getInfoItem() {
-        return String.format("\nNome: %s\nTamanho: %s\nValor: %.2f", this.nome, this.tamanho, this.valor);
+        return String.format("Nome: %s\nTamanho: %s\nValor: %.2f\n", this.nome, this.tamanho, this.valor);
     }
 
     public String getNome() {
