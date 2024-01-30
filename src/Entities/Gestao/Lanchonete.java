@@ -34,7 +34,6 @@ public class Lanchonete {
         }
 
         System.out.print("Selecione um " + tipoItem + " pelo Número > ");
-        int count = 1;
 
         int opcao = scanner.nextInt();
         scanner.nextLine();
