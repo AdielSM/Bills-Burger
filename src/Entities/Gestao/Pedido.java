@@ -32,10 +32,27 @@ public class Pedido {
     }
 
     public String getInfoPedido(){
-        if (this.extras != null){
-            return String.format("\nInformações Do Pedido:\nHamburguer: %s\nAcompanhamento: %s\nRefrigerante: %s\nExtras: %s\nValor total: %.2f", this.hamburguer.getNome(), this.acompanhamentos.getNome(), this.refrigerante.getNome(), this.extras.getNome(), this.getValorTotal());
-        }
-        return String.format("\nInformações Do Pedido:\nHamburguer: %s\nAcompanhamento: %s\nRefrigerante: %s\nValor total: %.2f", this.hamburguer.getNome(), this.acompanhamentos.getNome(), this.refrigerante.getNome(), this.getValorTotal());
-    }
+        String formatName = "%-30s";
+        String formatValue = "%10.2f%n";
+        StringBuilder infoPedido = new StringBuilder("\nInformações Do Pedido:\n");
 
+        infoPedido.append(String.format(formatName, "Hamburguer: " + this.hamburguer.getNome()));
+        infoPedido.append(String.format(formatValue, this.hamburguer.getValor()));
+
+        infoPedido.append(String.format(formatName, "Acompanhamento: " + this.acompanhamentos.getNome()));
+        infoPedido.append(String.format(formatValue, this.acompanhamentos.getValor()));
+
+        infoPedido.append(String.format(formatName, "Refrigerante: " + this.refrigerante.getNome()));
+        infoPedido.append(String.format(formatValue, this.refrigerante.getValor()));
+
+        if (this.extras != null){
+            infoPedido.append(String.format(formatName, "Extras: " + this.extras.getNome()));
+            infoPedido.append(String.format(formatValue, this.extras.getValor()));
+        }
+
+        infoPedido.append("-".repeat(40) + "\n");
+        infoPedido.append("Valor total: ");
+        infoPedido.append(String.format("%.2f", this.getValorTotal()));
+        return infoPedido.toString();
+    }
 }
