@@ -1,7 +1,7 @@
 package Entities.Gestao;
 
 public class CriarItens {
-    public CriarItens(Lanchonete lanchonete){
+    public static void criarItens(Lanchonete lanchonete){
         // Adicionando Hamburgueres
         lanchonete.addHamburguer("X-Tudo", "Grande", 25.0, "Bovina","Bacon, ovo, calabresa, queijo, presunto, alface, tomate, maionese");
         lanchonete.addHamburguer("X-Bacon", "Grande", 20.0, "Bovina","Bacon, queijo, alface, tomate, maionese");
